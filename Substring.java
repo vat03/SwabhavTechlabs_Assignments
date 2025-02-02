@@ -1,6 +1,6 @@
 package com.aurionpro.Day3HW;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Substring {
 	public static void main(String[] args) {
@@ -15,24 +15,21 @@ public class Substring {
 		System.out.print("\nEnter the substring to be checked: ");
 		String subString = scanner.nextLine();
 
-		System.out.println("\nInput String: "+inputString);
-		System.out.println("SubString to be searched: "+subString);
-		
+		System.out.println("\nInput String: " + inputString);
+		System.out.println("SubString to be searched: " + subString);
+
 		System.out.println();
-		
-		System.out.println("Substring found: "+isSubstring(inputString, subString));
+
+		System.out.println("Substring found: "+ isSubstring(inputString, subString));
 
 		scanner.close();
 	}
 
-	
 	public static boolean isSubstring(String inputString, String subString) {
 		int stringLength = inputString.length();
 		int subStringLength = subString.length();
 
 		if (stringLength < subStringLength) {
-			return false;
-		} else if (stringLength == subStringLength) {
 			return false;
 		} else {
 			for (int i = 0; i <= stringLength - subStringLength; i++) {
