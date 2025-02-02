@@ -9,11 +9,11 @@ public class Substring {
 
 		// Take user input of main string
 		System.out.print("Enter a String: ");
-		String inputString = scanner.nextLine();
+		String inputString = scanner.nextLine().toLowerCase();
 
 		// Take user input of sub string to be found
 		System.out.print("\nEnter the substring to be checked: ");
-		String subString = scanner.nextLine();
+		String subString = scanner.nextLine().toLowerCase();
 
 		System.out.println("\nInput String: " + inputString);
 		System.out.println("SubString to be searched: " + subString);
