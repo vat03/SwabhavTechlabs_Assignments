@@ -4,65 +4,49 @@ import java.util.*;
 
 public class Substring {
 	public static void main(String[] args) {
-		
+
 		Scanner scanner = new Scanner(System.in);
-	
+
+		// Take user input of main string
 		System.out.print("Enter a String: ");
 		String inputString = scanner.nextLine();
-		
+
+		// Take user input of sub string to be found
 		System.out.print("\nEnter the substring to be checked: ");
 		String subString = scanner.nextLine();
-		
-		int stringLength = inputString.length();
-		int subStringLength = subString.length();
-		
-		int[] inputArray = new int[stringLength];
-		int[] subStringArray = new int[subStringLength];
-		
-		for (int i = 0; i < stringLength; i++) {
-			inputArray[i] = inputString.charAt(i);
-		}
-		
-		for (int i = 0; i < subStringLength; i++) {
-			subStringArray[i] = subString.charAt(i);
-		}
+
+		System.out.println("\nInput String: "+inputString);
+		System.out.println("SubString to be searched: "+subString);
 		
 		System.out.println();
 		
-		if(stringLength < subStringLength)
-		{
-			System.out.println("No substring present as substring is greater than string !!");
-		}
-		else if(stringLength == subStringLength)
-		{
-			System.out.println("Both strings of same length so no substring present !!");
-		}
-		else
-		{
-			boolean subStringFound = false;
-			
+		System.out.println("Substring found: "+isSubstring(inputString, subString));
+
+		scanner.close();
+	}
+
+	
+	public static boolean isSubstring(String inputString, String subString) {
+		int stringLength = inputString.length();
+		int subStringLength = subString.length();
+
+		if (stringLength < subStringLength) {
+			return false;
+		} else if (stringLength == subStringLength) {
+			return false;
+		} else {
 			for (int i = 0; i <= stringLength - subStringLength; i++) {
 				int j;
 				for (j = 0; j < subStringLength; j++) {
-					if(inputArray[i+j] != subStringArray[j])
-					{
+					if (inputString.charAt(i + j) != subString.charAt(j)) {
 						break;
 					}
 				}
-				if(j == subStringLength)
-				{
-					subStringFound = true;
+				if (j == subStringLength) {
+					return true;
 				}
 			}
-			
-			if(subStringFound){
-				System.out.println(subString+" is a substring of "+inputString+".");
-			}
-			else
-			{
-				System.out.println(subString+" is not a substring of "+inputString+".");
-			}
 		}
-		scanner.close();
+		return false;
 	}
 }
