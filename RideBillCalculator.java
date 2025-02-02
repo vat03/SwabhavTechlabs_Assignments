@@ -7,6 +7,9 @@ public class RideBillCalculator {
 
 		Scanner scanner = new Scanner(System.in);
 
+		System.out.println("This is a Ride Billing System");
+		System.out.println();
+		
 		int totalBill = 0;
 		int rideCharge = 0;
 		int photoCharge = 0;
@@ -22,9 +25,9 @@ public class RideBillCalculator {
 
 			if (age < 12) {
 				rideCharge = 5;
-			} else if (age >= 12 && age <= 18) {
+			} else if (age >= 12 && age < 18) {
 				rideCharge = 7;
-			} else if (age > 18) {
+			} else if (age >= 18) {
 				if (age >= 45 && age <= 55) {
 					rideCharge = 0;
 				} else {
