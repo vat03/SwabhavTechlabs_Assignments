@@ -51,7 +51,7 @@ public class RideBillCalculator {
 			System.out.println("Your Photo charge is: " + photoCharge + "$");
 			System.out.println("\nYour Total bill is: " + totalBill + "$");
 		} else {
-			System.out.println("\nSorry !! You cannot Ride.");
+			System.out.println("\nSorry, Your height is less than 120 cms !! You cannot Ride.");
 		}
 
 		scanner.close();
