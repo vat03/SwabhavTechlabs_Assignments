@@ -10,21 +10,21 @@ public class WaterBillApp {
 		int unitsConsumed = scanner.nextInt();
 
 		int meterCharge = 75;
-		int charge = 0;
+		int unitcharge = 0;
 
 		if (unitsConsumed >= 0) {
 			if (unitsConsumed <= 100) {
-				charge = unitsConsumed * 5;
+				unitcharge = unitsConsumed * 5;
 			} else {
 				if (unitsConsumed <= 250) {
-					charge = unitsConsumed * 10;
+					unitcharge = unitsConsumed * 10;
 				} else {
-					charge = unitsConsumed * 20;
+					unitcharge = unitsConsumed * 20;
 				}
 			}
-			int totalWaterBill = charge + meterCharge;
+			int totalWaterBill = unitcharge + meterCharge;
 
-			System.out.println("\nUnit charge: "+charge);
+			System.out.println("\nUnit charge: "+unitcharge);
 			System.out.println("Meter charge: "+meterCharge);
 			System.out.println("\nTotal Water bill: " + totalWaterBill);
 
