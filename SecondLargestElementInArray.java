@@ -7,15 +7,17 @@ public class SecondLargestElementInArray {
 		Scanner scanner = new Scanner(System.in);
 
 		// Size of the array
-		System.out.println("Enter size of the array: ");
+		System.out.print("Enter size of the array: ");
 		int sizeOfArray = scanner.nextInt();
+
+		System.out.println();
 
 		// array declaration
 		int[] array = new int[sizeOfArray];
 
 		// array initialization
 		for (int i = 0; i < array.length; i++) {
-			System.out.println("Enter element " + (i + 1) + ": ");
+			System.out.print("Enter element " + (i + 1) + ": ");
 			array[i] = scanner.nextInt();
 		}
 
@@ -25,38 +27,27 @@ public class SecondLargestElementInArray {
 			System.out.print(i + " ");
 		}
 
+		// printing the output by calling the method
+		System.out.println("\n\nSecond Largest element of this array is: "+ secondLargest(array));
+		scanner.close();
+	}
+
+	// method to find second largest element of the array
+	public static int secondLargest(int array[]) {
 		int largestElement = array[0];
 		int secondLargestElement = array[1];
 
-		// Traversing array to find largest element in the array
-//		for (int i : array) {
-//			if (i > largestElement) {
-//				largestElement = i;
-//			}
-//		}
-//		
-//		for(int i : array)
-//		{
-//			if(i > secondLargestElement && i != largestElement)
-//			{
-//				secondLargestElement = i;
-//			}
-//		}
-
 		for (int i = 0; i < array.length; i++) {
-			if(array[i] > largestElement)
-			{
+			if (array[i] > largestElement) {
 				secondLargestElement = largestElement;
 				largestElement = array[i];
 			}
-			
-			if(array[i] < largestElement && array[i] > secondLargestElement)
-			{
+
+			if (array[i] < largestElement && array[i] > secondLargestElement) {
 				secondLargestElement = array[i];
 			}
 		}
-		
-		System.out.println("\n\nSecond Largest element is: "+secondLargestElement);
-		scanner.close();
+
+		return secondLargestElement;
 	}
 }
